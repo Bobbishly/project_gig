@@ -2,87 +2,119 @@ h2 {
   line-height: 1.8;
   margin: 0;
   padding: 0;
-  font-weight: bold;
   color: #222;
   font-family: 'Roboto Slab';
-  font-size: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 5px;
   text-transform: uppercase;
+}
+
+.damn {
+  color: black;
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Slab';
+  margin-top: 10px;
+  margin-bottom: 35px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.container .title {
+  font-size: 30px;
+  font-weight: 1000;
+  position: relative;
+}
+
+.container .title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 500px;
+  background: #174578;
 }
 
 body {
   font-size: 13px;
   line-height: 1.8;
   color: #fff;
-  background-image: url("../images/body-bg.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: url("../images/moroccan-flower-dark.webp");
+  background-repeat: repeat;
   background-position: center center;
   font-weight: 400;
   font-family: 'Roboto Slab';
   margin: 0px;
+  height: 100vh;
 }
 
-.main {
-  padding: 60px 0;
-  position: relative;
+img {
+  width: 30%;
+  margin-bottom: -100px;
+}
+
+.theme {
+  font-size: 25px;
+  font-weight: 700;
+  padding-left: 25px;
+  color: #222;
+  line-height: 1.8;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-bottom: 10px;
 }
 
 .container {
-  width: 586px;
-  background: #fff;
-  margin-left: 165px;
-  border-radius: 10px;
+  width: 50%;
+  background: #f9f9f9;
+  height: 100%;
 }
 
 .form-container {
-  padding: 50px 60px 70px 60px;
+  padding: 0px 0px 80px 60px;
 }
 
-input {
-  width: 100%;
-  display: block;
-  border: none;
-  border-bottom: 5px solid #ebebeb;
-  padding: 5px 0;
-  color: #222;
+.container form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.form-group input {
+  width: calc(100% / 2 - 20px);
+  height: 50px;
+  width: 45%;
   margin-bottom: 50px;
-  font-family: 'Roboto Slab';
-}
-
-input:focus {
-  color: #222;
-  border-bottom: 2px solid #4966b1;
+  font-weight: 500;
+  font-size: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 15px;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
 }
 
 .submit {
-  width: auto;
-  background: #4966b1;
+  width: 100%;
+  background: #174578;
   color: #fff;
-  padding: 16px 17px;
+  padding: 20px 50px;
   font-size: 13px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
-  background: #3a518d;
+  box-shadow: 0px 1px 15px 0px #174578;
+  margin-right: 50px;
 }
 
 @media screen and (max-width: 1024px) {
   .container {
-    margin: 0 auto;
+    
   }
 }
 
 @media screen and (max-width: 768px) {
   .container {
-    width: calc(100% - 30px);
-    max-width: 100%;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .appointment-form {
-    padding: 50px 30px 70px 30px;
+    
   }
 }
