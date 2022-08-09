@@ -11,6 +11,15 @@
     background: #ce491c;
     border: none;
     color: white;
+    /* display: none; */
+}
+
+.button_style2 {
+    float: left;
+    height: 60px;
+    background: #ce491c;
+    border: none;
+    color: white;
 }
 
 .bold_head {
@@ -37,6 +46,7 @@
     font-size: 25px;
     font-weight: 500;
     margin-top: -35px;
+    margin-bottom: 25px;
 }
 
 .sub_head {
@@ -61,10 +71,85 @@
 }
 
 body {
-    background: #e7eaf1;
+    background: white;
 }
 
 #regForm {
     margin-top: 50px;
     margin-bottom: 50px;
+}
+
+.high {
+    border: none;
+    background: white;
+    color: blue;
+}
+
+.belong {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.reflex {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+li {
+    text-align: center;
+    list-style: none;
+    font-size: 25px;
+    margin-top: 50px;
+    margin-bottom: 65px;
+    font-weight: 500;
+}
+
+.uuu {
+    margin-top: 50px;
+    margin-bottom: 65px;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.fff {
+    margin-top: 75px;
+    margin-bottom: 75px;
+}
+.ppp {
+    height: 35vh;
+}
+
+.lll {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.nav-item {
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    text-decoration: none;
+    white-space: nowrap;
+    margin-top: -5px;
+    margin-bottom: -5px;
+}
+
+.uuu {
+    background: white;
+}
+
+.eee {
+    font-size: 20px;
+}
+
+#contact_us {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+#about {
+    padding-bottom: 1rem;
 }

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.png" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <link rel="stylesheet" href="css/form.css">
+  <link rel="stylesheet" href="css/inline.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <link href="css/styles.css" rel="stylesheet" />
+  <link href="css/styles2.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <title>Document</title>
+</head>
+<body">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="mainNav">
+    <div class="container px-4">
+      <a class="navbar-brand" href="./signed_in.html">Virtual Digital</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span
+          class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="./signed_in.html#about">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">Our Company</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">Vision & Mission</a></li>
+          <li class="nav-item"><a class="nav-link" href="./signed_in.html#contact_us">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <header class="background_image ppp second_too text-white">
+    <div class="container px-4 text-sm-left">
+
+      <center>
+
+        <h1 id="dear">Dear  </h1>
+        <h3 class="fw-bolder yeah">Our assessment shows you are exposed to the following fraud risk:</h3><br>
+      </center>
+    </div>
+  </header>
+ 
+  <div class="fff">
+    <ul id="fraud_lists"></ul>
+  </div>
+  <br>
+  <div class="lll">
+    <p>Kindly <a href="#">contact our team</a> of experts on how to protect your business</p>
+  </div>
+<br>
+<br>
+  <footer class="py-5 bg-dark">
+    <div class="container px-4">
+      <center>
+      <p class="m-0 text-center text-white">Copyright &copy; Virtual Digital 2022</p>
+      </center>
+    </div>
+  </footer>
+  <script>
+
+    window.addEventListener('load', (event) => {
+      const dear = document.getElementById("dear");
+
+      let bus_name = sessionStorage.getItem('virtualDigitalSigned');
+
+      if (!bus_name) {
+        return;
+      }
+      bus_name = JSON.parse(bus_name);
+
+      const names = document.createElement("p");
+
+      names.appendChild(document.createTextNode(bus_name));
+
+      dear.appendChild(names);
+
+
+    });
+
+  </script>
+  <script src="js/response.js"></script>
+  <script src="js/sign_up.js"></script>
+  <script src="js/login.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="js/form.js"></script>
+  </body>
+
+</html>

@@ -20,6 +20,97 @@ function showTab(n) {
   fixStepIndicator(n)
 }
 
+function formSubmitted(){
+  const business_category = document.getElementById("business_category").value;
+
+    const business_type = document.getElementById("business_type").value;
+    
+    const website = document.getElementById("inputState1").value;
+    
+    const limit_product_order = document.getElementById("inputState2").value;
+    
+    const refund_policy = document.getElementById("inputState3").value;
+    
+    const refund_third_party = document.getElementById("inputState4").value;
+    
+    const request_kyc_documents = document.getElementById("inputState5").value;
+    
+    const accept_online_orders = document.getElementById("inputState6").value;
+    
+    const multiple_orders_per_day = document.getElementById("inputState7").value;
+    
+    const confirm_billing = document.getElementById("inputState8").value;
+    
+    const valid_and_updated_customer = document.getElementById("inputState9").value;
+    
+    var payment_mode = document.querySelectorAll("input[type='checkbox']:checked");
+
+    var payment_modes = [];
+
+    for (let index = 0; index < payment_mode.length; index++) {
+      const element = payment_mode[index];
+      payment_modes.push(element.value);
+    }
+  // document.getElementById("regForm").submit();
+
+  const form_submitted = {
+    method: 'post',
+    url: 'https://virtualdigitalconcept.com/api/api/submit',
+    data: JSON.stringify({
+      "Business Category": business_category,
+      "Business Type": business_type,
+      "Do You Have A Website": website,
+      "Do you have limit on product order per day": limit_product_order,
+      "Do you have a refund policy in place": refund_policy,
+      "Do you refund to a 3rd party account": refund_third_party,
+      "For orders above normal, do you request for KYC documents (ID etc)": request_kyc_documents,
+      "Do you accept email orders": accept_online_orders,
+      "For multiple orders per day do you validate such transactions": multiple_orders_per_day,
+      "Do you confirm billing and shipping address for huge orders": confirm_billing,
+      "Do you have valid and updated customer information": valid_and_updated_customer, 
+      "Payment Mode Accepted": payment_modes
+    }),
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    transformRequest: [(data, headers) => {
+        // transform the data
+
+        return data;
+    }]
+};
+
+// const finished_form = document.getElementById('nextBtn');
+
+// finished_form.addEventListener('click', formSubmitted);
+
+
+axios(form_submitted)
+    .then((response) => {
+
+        console.log(response.data);
+
+        sessionStorage.setItem('virtualDigital_response', JSON.stringify(response.data));
+
+        console.log(sessionStorage.getItem('virtualDigital_response'));
+        // alert(ddd);
+            // alert(response.data)
+            window.location = "https://virtualdigitalconcept.com/response.html";
+            // window.location = "http://127.0.0.1:5500/response.html";
+       
+
+
+
+    }).catch((error) => {
+    
+    console.log(error);
+    console.log("error");
+    
+})
+}
+
+
+
 function nextPrev(n) {
   // This function will figure out which tab to display
   var x = document.getElementsByClassName("tab");
@@ -32,7 +123,7 @@ function nextPrev(n) {
   // if you have reached the end of the form... :
   if (currentTab >= x.length) {
     //...the form gets submitted:
-    document.getElementById("regForm").submit();
+    formSubmitted();
     return false;
   }
   // Otherwise, display the correct tab:
@@ -43,7 +134,7 @@ function validateForm() {
   // This function deals with validation of the form fields
   var x, y, i, valid = true;
   x = document.getElementsByClassName("tab");
-  y = x[currentTab].getElementsByTagName("input");
+  y = x[currentTab].getElementsByClassName("nextoption");
   // A loop that checks every input field in the current tab:
   for (i = 0; i < y.length; i++) {
     // If a field is empty...
@@ -70,6 +161,12 @@ function fixStepIndicator(n) {
   //... and adds the "active" class to the current step:
   x[n].className += " active";
 }
+
+
+// function dddd() {
+//   console.log(sessionStorage.getItem('virtualDigitalUser'));
+// }
+
 
 var business = {
     'Retailer': [
@@ -139,8 +236,6 @@ var business = {
 
 var main = document.getElementById('business_category')
 var sub = document.getElementById('business_type')
-// var main = document.getElements('business_category');
-// var sub = document.getElementsByClassName('business_type');
 
 main.addEventListener('change', function() {
 
@@ -153,9 +248,56 @@ main.addEventListener('change', function() {
     sub.innerHTML = '';
 
     Array.from(selected_option).forEach(function(el) {
+      if (el === 'Choose...') {
+        let option = new Option(el, "");
+
+        sub.appendChild(option)
+      } else {
         let option = new Option(el, el);
 
         sub.appendChild(option)
+      }
     })
 
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
