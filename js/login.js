@@ -38,7 +38,7 @@ const already_user = () => {
             console.log(sessionStorage.getItem('virtualDigitalSigned'));
             console.log(response.data.user.business_name);
             
-            alert("hii");
+            // alert("hii");
             // alert("Welcome");
                 // alert("Welcome!!!")
                 window.location = "https://virtualdigitalconcept.com/signed_in.html";

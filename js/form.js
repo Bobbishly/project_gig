@@ -20,6 +20,8 @@ function showTab(n) {
   fixStepIndicator(n)
 }
 
+
+
 function formSubmitted(){
   const business_category = document.getElementById("business_category").value;
 
@@ -53,6 +55,8 @@ function formSubmitted(){
     }
   // document.getElementById("regForm").submit();
 
+  
+
   const form_submitted = {
     method: 'post',
     url: 'https://virtualdigitalconcept.com/api/api/submit',
@@ -84,6 +88,14 @@ function formSubmitted(){
 
 // finished_form.addEventListener('click', formSubmitted);
 
+const loadingDiv = document.getElementById("loading");
+
+let showLoader = () => {
+  loadingDiv.classList.add('preLoaderWrapper');
+  loadingDiv.classList.remove('fadeOutAnimation');
+}
+
+showLoader();
 
 axios(form_submitted)
     .then((response) => {
@@ -98,8 +110,14 @@ axios(form_submitted)
             window.location = "https://virtualdigitalconcept.com/response.html";
             // window.location = "http://127.0.0.1:5500/response.html";
        
+            let hideLoader = () => {
+              loadingDiv.classList.remove('preLoaderWrapper');
+              loadingDiv.classList.add('fadeOutAnimation');
+            }
 
+            hideLoader();
 
+            
 
     }).catch((error) => {
     
@@ -107,7 +125,48 @@ axios(form_submitted)
     console.log("error");
     
 })
+
+
 }
+
+// const next_loading = document.getElementById("nextBtn");
+
+// next_loading.addEventListener('click', () => {
+
+//     const preLoaderWrapper = document.querySelector('.preLoaderWrapper');
+
+//     preLoaderWrapper.classList.add('fadeOutAnimation')
+// });
+
+// let hideLoader = () => {
+//   loadingDiv.classList.remove('preLoaderWrapper');
+//   loadingDiv.classList.add('fadeOutAnimation');
+// }
+
+// let showLoader = () => {
+//   loadingDiv.classList.add('preLoaderWrapper');
+//   loadingDiv.classList.remove('fadeOutAnimation');
+// }
+
+// let isVisible = false;
+// const loadingDiv = document.getElementById("loading");
+
+// setInterval(() => {
+//     if (isVisible) {
+//         showLoader();
+
+
+//     }
+//     if (!isVisible) {
+//         hideLoader();
+
+
+//     }
+
+//     isVisible = !isVisible;
+// }, 8000);
+
+
 
 
 
